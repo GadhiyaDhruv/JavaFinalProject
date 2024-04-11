@@ -22,28 +22,22 @@ public class DatabaseConnector {
         }
     }
 
-    public static DatabaseConnector getInstance() {
-        if (instance == null) {
-            synchronized (DatabaseConnector.class) {
-                if (instance == null) {
-                    instance = new DatabaseConnector();
-                }
+   public static DatabaseConnector getInstance() {
+    if (instance == null) {
+        synchronized (DatabaseConnector.class) {
+            if (instance == null) {
+                instance = new DatabaseConnector();
+                System.out.println("New instance of DatabaseConnector created."); // Add this line for debugging
             }
         }
-        return instance;
     }
+    return instance;
+}
+
 
     public Connection getConnection() {
         return connection;
     }
 
-    public void closeConnection() {
-        if (connection != null) {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }
+    
 }
