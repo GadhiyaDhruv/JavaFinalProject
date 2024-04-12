@@ -38,8 +38,7 @@ public class RegisterServlet extends HttpServlet {
             } else {
                 response.getWriter().println("Registration failed");
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException | SQLException e) {
             response.getWriter().println("Error during registration: " + e.getMessage());
         } 
     }
