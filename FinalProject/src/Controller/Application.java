@@ -20,7 +20,7 @@ public class Application {
         SurplusFoodItemDAO surplusFoodItemDao = new SurplusFoodItemDAOImpl();
         Scanner scanner = new Scanner(System.in);
 
-        // Create instances of controllers
+        // Create instances of controllers 
         UserController userController = new UserController(userDao , scanner);
         FoodItemController foodItemController = new FoodItemController(foodItemDao, scanner);
         claimController claimController = new claimController(claimDao, scanner);

@@ -30,7 +30,7 @@
 	    }
 
 	    private void initializeDatabase() {
-	        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/", "username", "password");
+	        try (Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/", "root", "Dgadhiya@20");
 	             Statement statement = connection.createStatement()) {
 
 	            // Drop the FWRP database if it exists
@@ -65,10 +65,8 @@
 	        System.out.println("1. User Management");
 	        System.out.println("2. Food Item Management");
 	        System.out.println("3. Transaction Management");
-	        System.out.println("4. Retailer Management");
-	        System.out.println("5. Inventory Management");
-	        System.out.println("6. Charitable Organization Management");
-	        System.out.println("7. Exit");
+	 
+	        System.out.println("4. Exit");
 
 	        int choice = scanner.nextInt();
 	        scanner.nextLine();
