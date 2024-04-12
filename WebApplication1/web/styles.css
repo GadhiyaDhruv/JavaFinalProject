@@ -1,0 +1,97 @@
+/* styles.css */
+
+/* Reset default margin and padding */
+body, h2, form, input, select, p, a {
+    margin: 50px;
+    padding: 0px;
+}
+
+/* Apply box-sizing border-box to all elements */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: roboto;
+    background-color: #f2f2f2;
+}
+
+/* Center align everything */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Set container height to full viewport height */
+}
+
+/* Container styles */
+.container {
+    max-width: 100px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form styles */
+form {
+    text-align: center;
+}
+
+/* Input and select styles */
+input[type="email"],
+input[type="password"],
+select {
+    width: 50%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Submit button styles */
+input[type="submit"] {
+    width: 50%;
+    padding: 10px;
+    background-color: darkgreen;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Submit button hover styles */
+input[type="submit"]:hover {
+    background-color: lightgreen;
+}
+
+/* Paragraph styles */
+p {
+    margin-top: 20px;
+}
+
+/* Anchor styles */
+a {
+    color: darkgreen;
+    text-decoration: none;
+}
+
+/* Anchor hover styles */
+a:hover {
+    text-decoration: underline;
+}
+
+/* Background image */
+body {
+    background-image: url('https://img.freepik.com/free-photo/top-view-trash-cooking-concept_23-2149056455.jpg'); /* Replace 'background-image.jpg' with the path to your image */
+    background-size: cover;
+    background-position: center;
+}

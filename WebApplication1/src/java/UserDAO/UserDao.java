@@ -1,4 +1,5 @@
-package DAO;
+package UserDAO;
+
 
 import java.sql.*;
 

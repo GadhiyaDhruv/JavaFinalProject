@@ -1,13 +1,19 @@
+import jakarta.servlet.ServletException;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-@jakarta.servlet.annotation.WebServlet("/LoginServlet")
-public class LoginServlet extends jakarta.servlet.http.HttpServlet {
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
     @Override
-    protected void doPost(jakarta.servlet.http.HttpServletRequest request, jakarta.servlet.http.HttpServletResponse response) throws jakarta.servlet.ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String Email = request.getParameter("email");
         String Password = request.getParameter("password");
         String UserType = request.getParameter("userType");
@@ -16,7 +22,7 @@ public class LoginServlet extends jakarta.servlet.http.HttpServlet {
         try {
             // Use DBConnection class to get database connection
             DatabaseConnector db = DatabaseConnector.getInstance();
-           System.out.println("DatabaseConnector instance retrieved: " + db);
+            System.out.println("DatabaseConnector instance retrieved: " + db);
 
             connection = db.getConnection();
 
@@ -32,9 +38,15 @@ public class LoginServlet extends jakarta.servlet.http.HttpServlet {
                 // Redirect to appropriate page based on UserType
                 String userTypeFromDB = resultSet.getString("UserType");
                 switch (userTypeFromDB) {
-                    case "retailer" -> response.sendRedirect("retailer");
-                    case "consumer" -> response.sendRedirect("consumer");
-                    case "charity" -> response.sendRedirect("charity");
+                    case "retailer":
+                        response.sendRedirect("retailer");
+                        break;
+                    case "consumer":
+                        response.sendRedirect("consumer");
+                        break;
+                    case "charity":
+                        response.sendRedirect("charity");
+                        break;
                 }
             } else {
                 // User does not exist or invalid credentials
